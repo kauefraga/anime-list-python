@@ -7,7 +7,7 @@ class Anime(pw.Model):
   title = pw.CharField()
   # alias = pw.CharField()
   url = pw.CharField()
-  created_at = pw.DateField()
+  created_at = pw.CharField()
 
   class Meta:
     database = db # This model uses the "people.db" database.
