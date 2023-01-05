@@ -5,6 +5,7 @@ from infra.db import Anime, db
 @click.command()
 @click.argument('title')
 def open(title: str):
+  """Search for an anime with a title and return it with a url"""
   print('Title: [orange_red1]{}[/orange_red1]'.format(title))
 
   anime = Anime.get(Anime.title == title)
