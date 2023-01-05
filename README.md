@@ -55,7 +55,17 @@ and integrate systems more effectively.
 - 🕶 [Click](https://pypi.org/project/click) - Composable command line interface toolkit
 - 🗃 [Peewee](https://pypi.org/project/peewee) - Peewee is a simple and small ORM.
 - 🎨 [Rich](https://pypi.org/project/rich) - Rich is a Python library for rich text and beautiful formatting in the terminal.
+- 🛡 [Validators](https://pypi.org/project/validators) - A library for validating URLs
 - 💾 [Sqlite](https://www.sqlite.org/index.html) - A small, fast, self-contained... A SQL database engine
+
+## 📜 Coming soon...
+
+- `list`: add visual feedback
+- `list`: the database will grow, therefore query and print only today animes
+- `list`: query and write to a file (-o --output)
+- `list`: query all the animes and display it (-a --all)
+- `open`: show a list of nice websites (-a --all)
+- `open`: if some anime does not exists, display something like: "did you mean {an existing anime}?"
 
 ## 📝 License
 
