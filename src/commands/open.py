@@ -3,10 +3,28 @@ from rich import print
 from components.icons import Icon
 from infra.db import Anime, db
 
+WHITELIST = [
+  'https://betteranime.net',
+  'https://puray.moe',
+  'https://animesonline.cc - https://animesonlinex.cx',
+  'https://animestc.net',
+  'https://animeszone.net',
+]
+
 @click.command()
-@click.argument('title')
-def open(title: str):
+@click.option('--all', '-a', is_flag=True, help='Show a list of nice websites')
+@click.argument('title', required=False)
+def open(all: bool, title: str):
   """Search for an anime with a title and return it with a url"""
+  if all:
+    for i in range(len(WHITELIST)):
+      print('{} {}'.format(Icon.PLUS.value, WHITELIST[i]))
+    exit(0)
+
+  if not all and title is None:
+    print('{} No title provided'.format(Icon.MINUS.value))
+    exit(0)
+
   print('{} Searching...'.format(Icon.INTERROGATIVE.value))
 
   anime = Anime.get_or_none(Anime.title == title)
