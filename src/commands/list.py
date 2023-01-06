@@ -6,8 +6,9 @@ from components.icons import Icon
 from infra.db import Anime, db
 
 @click.command()
-def list():
-  """Query and show all the saved animes"""
+@click.option('--all', '-a', is_flag=True, help='List all available animes')
+def list(all: bool):
+  """Query and show today animes"""
   table = Table(title="Anime List")
 
   table.add_column("Title", style="magenta")
@@ -18,7 +19,12 @@ def list():
   query = Anime.select(
     Anime.title,
     Anime.created_at
-  ).where(Anime.created_at.day == datetime.now().day).order_by(Anime.created_at.desc())
+  ).order_by(Anime.created_at.desc()) if all else Anime.select(
+    Anime.title,
+    Anime.created_at
+  ).where(
+    Anime.created_at.day == datetime.now().day
+  ).order_by(Anime.created_at.desc())
 
   for anime in query:
     created_at, ms = anime.created_at.split('.')
