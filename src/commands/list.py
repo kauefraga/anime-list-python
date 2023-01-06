@@ -16,17 +16,20 @@ def list(all: bool):
 
   print('{} Querying today animes...'.format(Icon.PLUS.value))
 
-  query = Anime.select(
-    Anime.title,
-    Anime.created_at
-  ).order_by(Anime.created_at.desc()) if all else Anime.select(
-    Anime.title,
-    Anime.created_at
-  ).where(
-    Anime.created_at.day == datetime.now().day
-  ).order_by(Anime.created_at.desc())
+  queries = {
+    True: Anime.select(
+      Anime.title,
+      Anime.created_at
+    ).order_by(Anime.created_at.desc()),
+    False: Anime.select(
+      Anime.title,
+      Anime.created_at
+    ).where(
+      Anime.created_at.day == datetime.now().day
+    ).order_by(Anime.created_at.desc())
+  }
 
-  for anime in query:
+  for anime in queries[all]:
     created_at, ms = anime.created_at.split('.')
     table.add_row(anime.title, created_at)
 
