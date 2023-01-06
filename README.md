@@ -33,9 +33,11 @@
 - **Colorized Outputs**: Everything looks better with some colors
 - **Nice help**: If you need some help, just use the flag `--help`
 - **Commands**:
-  - `list`: query and show all the saved animes
+  - `list`: query and show today animes
+    - `list --all`: show all available animes
   - `save`: create an anime with a given title/description and save it
   - `open`: search for an anime with a title and return it with a url
+    - `open --all`: return a list of nice websites
 
 ## ⬇️ How to install and use it
 
@@ -60,11 +62,7 @@ and integrate systems more effectively.
 
 ## 📜 Coming soon...
 
-- `list`: add visual feedback
-- `list`: the database will grow, therefore query and print only today animes
 - `list`: query and write to a file (-o --output)
-- `list`: query all the animes and display it (-a --all)
-- `open`: show a list of nice websites (-a --all)
 - `open`: if some anime does not exists, display something like: "did you mean {an existing anime}?"
 
 ## 📝 License
