@@ -14,7 +14,7 @@ def list(all: bool):
   table.add_column("Title", style="magenta")
   table.add_column("Created at", justify="right", style="cyan", no_wrap=True)
 
-  print('{} Querying today animes...'.format(Icon.PLUS.value))
+  print('{} Querying today animes...'.format(Icon.INTERROGATIVE.value))
 
   queries = {
     True: Anime.select(

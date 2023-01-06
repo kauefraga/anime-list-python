@@ -3,7 +3,7 @@ from commands.list import list
 from commands.save import save
 from commands.open import open
 
-@click.version_option('0.1.0', message='%(prog)s version %(version)s')
+@click.version_option('1.5.0', message='%(prog)s version %(version)s')
 @click.group(context_settings={'help_option_names': ['-h', '--help']})
 def cli():
   """
