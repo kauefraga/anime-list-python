@@ -3,13 +3,10 @@ import peewee as pw
 db = pw.SqliteDatabase('animes.db')
 
 class Anime(pw.Model):
-  # id = pw.IdentifierField() # primary key
-  title = pw.CharField()
+  title = pw.CharField(unique=True)
   # alias = pw.CharField()
   url = pw.CharField()
-  created_at = pw.CharField()
+  created_at = pw.DateTimeField(formats='YYYY-MM-DD HH:MM:SS')
 
   class Meta:
-    database = db # This model uses the "people.db" database.
-
-# entities: Anime, whitelisted sites
+    database = db

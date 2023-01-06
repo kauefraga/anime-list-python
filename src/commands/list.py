@@ -1,3 +1,4 @@
+from datetime import datetime
 import click
 from rich import print
 from rich.table import Table
@@ -12,12 +13,12 @@ def list():
   table.add_column("Title", style="magenta")
   table.add_column("Created at", justify="right", style="cyan", no_wrap=True)
 
-  print('{} Querying...'.format(Icon.PLUS.value))
+  print('{} Querying today animes...'.format(Icon.PLUS.value))
 
   query = Anime.select(
     Anime.title,
     Anime.created_at
-  ).order_by(Anime.created_at.desc())
+  ).where(Anime.created_at.day == datetime.now().day).order_by(Anime.created_at.desc())
 
   for anime in query:
     created_at, ms = anime.created_at.split('.')
