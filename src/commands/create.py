@@ -6,7 +6,7 @@ from infra.db import Anime, db
 @click.command()
 @click.argument('title')
 @click.argument('url')
-def save(title: str, url: str):
+def create(title: str, url: str):
   """Save an anime with a given title/description"""
   if not validators.url(url):
     print('{} [bold red]The URL is not valid[/bold red]'.format(Icon.MINUS.value))

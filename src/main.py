@@ -1,6 +1,6 @@
 import click
 from commands.list import list
-from commands.save import save
+from commands.create import create
 from commands.open import open
 
 @click.version_option('1.5.0', message='%(prog)s version %(version)s')
@@ -14,6 +14,6 @@ def cli():
 
 if __name__ == '__main__':
   cli.add_command(list)
-  cli.add_command(save)
+  cli.add_command(create)
   cli.add_command(open)
   cli()
