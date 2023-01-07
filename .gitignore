@@ -1,2 +1,5 @@
 # Python run cache
 __pycache__
+
+# Exported csv
+animes.csv
