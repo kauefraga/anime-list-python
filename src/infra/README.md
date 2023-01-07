@@ -46,6 +46,9 @@ for user in User.select():
 # Sorting
 for user in User.select().order_by(User.age.desc()) # oldest to youngest
 
+# Count aggregator
+userRecords = User.select().count()
+
 # Remember to close the connection
 db.close()
 ```
