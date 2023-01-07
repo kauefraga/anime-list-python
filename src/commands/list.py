@@ -16,6 +16,9 @@ def list(all: bool):
 
   print('{} Querying animes...'.format(Icon.INTERROGATIVE.value))
 
+  totalCount = Anime.select().count()
+  print('{} Animes count: {}'.format(Icon.PLUS.value, totalCount))
+
   queries = {
     True: Anime.select(
       Anime.title,
@@ -33,7 +36,11 @@ def list(all: bool):
     created_at, ms = anime.created_at.split('.')
     table.add_row(anime.title, created_at)
 
-  print('[green]Done![/green]')
+  if table.row_count == 0:
+    print('{} [bold red]No anime saved today. Try again with -a![/bold red]'.format(Icon.MINUS.value))
+    exit(0)
+
+  print('[bold green]Done![/bold green]')
   print(table)
 
   db.close()
