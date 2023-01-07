@@ -7,7 +7,7 @@ from infra.db import Anime, db
 @click.argument('title')
 @click.argument('url')
 def create(title: str, url: str):
-  """Save an anime with a given title/description"""
+  """Create an anime with a given title/description"""
   if not validators.url(url):
     print('{} [bold red]The URL is not valid[/bold red]'.format(Icon.MINUS.value))
     exit(0)
@@ -24,6 +24,6 @@ def create(title: str, url: str):
   Anime.create(title=title, url=url, created_at=datetime.datetime.now())
 
   print('[green]Done![/green]')
-  print('[green]The anime {} is saved in the database[/green]'.format(title))
+  print('[green]The anime {} has been created in the database[/green]'.format(title))
 
   db.close()
