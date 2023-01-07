@@ -35,9 +35,11 @@
 - **Commands**:
   - `list`: query and show today animes
     - `list --all`: show all available animes
-  - `save`: create an anime with a given title/description and save it
+  - `Create`: create an anime with a given title/description and save it
   - `open`: search for an anime with a title and return it with a url
     - `open --all`: return a list of nice websites
+  - `save`: save the whole database into a csv file
+
 
 ## ⬇️ How to install and use it
 
@@ -62,7 +64,6 @@ and integrate systems more effectively.
 
 ## 📜 Coming soon...
 
-- `list`: query and write to a file (-o --output)
 - `open`: if some anime does not exists, display something like: "did you mean {an existing anime}?"
 
 ## 📝 License
