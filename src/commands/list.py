@@ -19,20 +19,20 @@ def list(all: bool):
   totalCount = Anime.select().count()
   print('{} Animes count: {}'.format(Icon.PLUS.value, totalCount))
 
-  queries = {
-    True: Anime.select(
-      Anime.title,
-      Anime.created_at
-    ).order_by(Anime.created_at.desc()),
-    False: Anime.select(
-      Anime.title,
-      Anime.created_at
-    ).where(
-      Anime.created_at.day == datetime.now().day
-    ).order_by(Anime.created_at.desc())
-  }
+  query = Anime.select(
+    Anime.title,
+    Anime.created_at
+  ).where(
+    Anime.created_at.day == datetime.now().day
+  ).order_by(Anime.created_at.desc())
 
-  for anime in queries[all]:
+  if all:
+    query = Anime.select(
+      Anime.title,
+      Anime.created_at
+    ).order_by(Anime.created_at.desc())
+
+  for anime in query:
     created_at, ms = anime.created_at.split('.')
     table.add_row(anime.title, created_at)
 
