@@ -8,9 +8,13 @@ from infra.db import Anime, db
 @click.argument('file', required=False)
 def save(file: str):
   """Save the whole database into a csv file"""
-  resolvedFile = Path(file or 'animes.csv').resolve()
+  path = Path(file or 'animes.csv').resolve()
 
-  f = open(resolvedFile, 'a')
+  if path.exists():
+    f = open(path, 'w')
+  else:
+    f = open(path, 'a')
+
   f.write('Title, URL, Created At\n')
 
   query = Anime.select().order_by(Anime.created_at)
