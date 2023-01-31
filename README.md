@@ -62,9 +62,7 @@ and integrate systems more effectively.
 - 🛡 [Validators](https://pypi.org/project/validators) - A library for validating URLs
 - 💾 [Sqlite](https://www.sqlite.org/index.html) - A small, fast, self-contained... A SQL database engine
 
-## 📜 Coming soon...
-
-- `open`: if some anime does not exists, display something like: "did you mean {an existing anime}?"
+<!-- ## 📜 Coming soon... -->
 
 ## 📝 License
 
