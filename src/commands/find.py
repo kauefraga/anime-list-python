@@ -27,13 +27,10 @@ def find(all: bool, title: str):
 
   print('{} Searching...'.format(Icon.INTERROGATIVE.value))
 
-  anime = Anime.get_or_none(Anime.title == title)
+  anime = Anime.get_or_none(Anime.title.startswith(title))
 
   if anime is None:
-    anime_fix = Anime.get_or_none(Anime.title.startswith(title))
-
     print('{} [bold red]{} not found. [/bold red]'.format(Icon.MINUS.value, title))
-    print('{} Did you mean "{}"?'.format(Icon.INTERROGATIVE.value, anime_fix.title))
     exit(0)
 
   print('[bold green]Found![/bold green]')
