@@ -36,8 +36,8 @@
   - `list`: query and show today animes
     - `list --all`: show all available animes
   - `Create`: create an anime with a given title/description and save it
-  - `open`: search for an anime with a title and return it with a url
-    - `open --all`: return a list of nice websites
+  - `find`: search for an anime with a title and return it with a url
+    - `find --all`: return a list of nice websites
   - `save`: save the whole database into a csv file
 
 
