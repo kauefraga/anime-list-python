@@ -35,7 +35,7 @@
 - **Commands**:
   - `list`: query and show today animes
     - `list --all`: show all available animes
-  - `Create`: create an anime with a given title/description and save it
+  - `create`: create an anime with a given title/description and save it
   - `find`: search for an anime with a title and return it with a url
     - `find --all`: return a list of nice websites
   - `save`: save the whole database into a csv file
@@ -52,7 +52,7 @@ python3 src/main.py COMMAND
 ```
 You are welcome to open issues and pull requests!
 
-## 💻 Technologies
+## 🛠 Technologies
 
 - 🐍 [Python](https://www.python.org) - A programming language that lets you work quickly
 and integrate systems more effectively.
@@ -62,7 +62,10 @@ and integrate systems more effectively.
 - 🛡 [Validators](https://pypi.org/project/validators) - A library for validating URLs
 - 💾 [Sqlite](https://www.sqlite.org/index.html) - A small, fast, self-contained... A SQL database engine
 
-<!-- ## 📜 Coming soon... -->
+## 📜 Coming soon...
+
+- `create`: improve interface with [rich.panel](https://rich.readthedocs.io/en/stable/panel.html)
+- `list`: remove unnecessary colors brackets
 
 ## 📝 License
 
