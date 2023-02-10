@@ -1,7 +1,8 @@
 import click
-import validators
 import datetime
 from rich import print
+
+from utils.validators import is_url
 from components.icons import Icon
 from infra.db import Anime, db
 
@@ -10,7 +11,7 @@ from infra.db import Anime, db
 @click.argument('url')
 def create(title: str, url: str):
   """Create an anime with a given title/description"""
-  if not validators.url(url):
+  if not is_url(url):
     print('{} [bold red]The URL is not valid'.format(Icon.MINUS.value))
     exit(0)
 
