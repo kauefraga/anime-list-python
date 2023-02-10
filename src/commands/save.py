@@ -1,6 +1,7 @@
 import click
 from pathlib import Path
 from rich import print
+
 from components.icons import Icon
 from infra.db import Anime, db
 

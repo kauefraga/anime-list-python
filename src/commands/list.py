@@ -1,7 +1,8 @@
-from datetime import datetime
 import click
+from datetime import datetime
 from rich import print
 from rich.table import Table
+
 from components.icons import Icon
 from infra.db import Anime, db
 
