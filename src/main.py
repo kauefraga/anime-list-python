@@ -4,11 +4,11 @@ from commands.create import create
 from commands.find import find
 from commands.save import save
 
-@click.version_option('1.7.0', message='%(prog)s version %(version)s')
+@click.version_option('1.7.1', message='v%(version)s')
 @click.group(context_settings={'help_option_names': ['-h', '--help']})
 def cli():
   """
-    A list to save information about some animes\n
+    📖 A list to save information about some animes\n
       example: python src/main.py list
   """
   pass
