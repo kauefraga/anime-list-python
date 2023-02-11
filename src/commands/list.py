@@ -15,10 +15,10 @@ def list(all: bool):
   table.add_column("Title", style="magenta")
   table.add_column("Created at", justify="right", style="cyan", no_wrap=True)
 
-  print('{} Querying animes...'.format(Icon.INTERROGATIVE.value))
+  print(f'{Icon.INTERROGATIVE.value} Querying animes...')
 
   totalCount = Anime.select().count()
-  print('{} Animes count: {}'.format(Icon.PLUS.value, totalCount))
+  print(f'{Icon.PLUS.value} Animes count: {totalCount}')
 
   query = Anime.select(
     Anime.title,
@@ -38,10 +38,10 @@ def list(all: bool):
     table.add_row(anime.title, created_at)
 
   if table.row_count == 0:
-    print('{} [bold red]No anime saved today. Try again with -a![/bold red]'.format(Icon.MINUS.value))
+    print('{} [bold red]No anime saved today. Try again with -a!'.format(Icon.MINUS.value))
     exit(0)
 
-  print('[bold green]Done![/bold green]')
+  print('[bold green]Done!')
   print(table)
 
   db.close()

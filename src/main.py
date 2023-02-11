@@ -4,7 +4,7 @@ from commands.create import create
 from commands.find import find
 from commands.save import save
 
-@click.version_option('1.7.2', message='v%(version)s')
+@click.version_option('1.7.3', message='v%(version)s')
 @click.group(context_settings={'help_option_names': ['-h', '--help']})
 def cli():
   """
