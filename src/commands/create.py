@@ -15,11 +15,11 @@ def create(title: str, url: str):
     print('{} [bold red]The URL is not valid'.format(Icon.MINUS.value))
     exit(0)
 
+  print(f'{Icon.INTERROGATIVE.value} Checking if the anime already exists...')
   animeAlreadyExists = Anime.get_or_none(Anime.title == title)
 
   if animeAlreadyExists:
     print('{} [bold red]{} already exists.'.format(Icon.MINUS.value, title))
-    print('[red]Exiting...')
     exit(0)
 
   print('{} Title: [orange_red1]{}'.format(Icon.PLUS.value, title))
