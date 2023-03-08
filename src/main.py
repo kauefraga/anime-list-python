@@ -3,8 +3,9 @@ from commands.list import list
 from commands.create import create
 from commands.find import find
 from commands.save import save
+from commands.status import status
 
-@click.version_option('1.7.3', message='v%(version)s')
+@click.version_option('1.8.0', message='v%(version)s')
 @click.group(context_settings={'help_option_names': ['-h', '--help']})
 def cli():
   """
@@ -18,4 +19,5 @@ if __name__ == '__main__':
   cli.add_command(create)
   cli.add_command(find)
   cli.add_command(save)
+  cli.add_command(status)
   cli()
