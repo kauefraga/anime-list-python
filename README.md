@@ -39,6 +39,7 @@
   - `find`: search for an anime with a title and return it with a url
     - `find --all`: return a list of nice websites
   - `save`: save the whole database into a csv file
+  - `status`: list the available and unavailable websites for watching anime
 
 
 ## ⬇️ How to install and use it
@@ -65,7 +66,6 @@ and integrate systems more effectively.
 ## 📜 Coming soon...
 
 - `create`: improve interface with [rich.panel](https://rich.readthedocs.io/en/stable/panel.html)
-- `list`: remove unnecessary colors brackets
 
 ## 📝 License
 
