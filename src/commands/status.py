@@ -16,6 +16,6 @@ SITES = [
 
 @click.command()
 def status():
-  """List the available and unavailable websites for watching animes"""
+  """List the available and unavailable websites for watching anime"""
   for i in range(len(SITES)):
     print(SITES[i])
