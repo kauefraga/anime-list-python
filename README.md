@@ -27,11 +27,16 @@
   </p>
 </div>
 
-## ✨ Features
+> I used to write the animes that i watch right in a plain text file however,
+i decided to create this project using Python because of its facilities and
+packages that i wanted to try, like: _rich_ (beautiful formatter), _peewee_
+(little orm) and _click_ (cli composer toolkit).
 
-- **Fancy UI**: A minimal UI that exposes everything you need
-- **Colorized Outputs**: Everything looks better with some colors
-- **Nice help**: If you need some help, just use the flag `--help`
+### Features
+
+- **Fancy UI**: A minimal UI that exposes everything you need.
+- **Colorized Outputs**: Everything looks better with some colors.
+- **Nice help**: If you need some help, just use the flag `--help`.
 - **Commands**:
   - `list`: query and show today animes
     - `list --all`: show all available animes
@@ -44,11 +49,16 @@
 
 ## ⬇️ How to install and use it
 
+1. Clone the repository and enter in
+2. Install the dependencies
+3. Run one of the commands listed above (at features)
+
 ```bash
 git clone https://github.com/kauefraga/anime-list.git
 cd anime-list
 
 pip install -r requirements.txt
+
 python3 src/main.py COMMAND
 ```
 You are welcome to open issues and pull requests!
@@ -62,10 +72,6 @@ and integrate systems more effectively.
 - 🎨 [Rich](https://pypi.org/project/rich) - Rich is a Python library for rich text and beautiful formatting in the terminal.
 - 🛡 [Validators](https://pypi.org/project/validators) - A library for validating URLs
 - 💾 [Sqlite](https://www.sqlite.org/index.html) - A small, fast, self-contained... A SQL database engine
-
-## 📜 Coming soon...
-
-- `create`: improve interface with [rich.panel](https://rich.readthedocs.io/en/stable/panel.html)
 
 ## 📝 License
 
