@@ -5,6 +5,7 @@ from rich import print
 from components.icons import Icon
 from infra.db import Anime, db
 
+
 @click.command()
 @click.argument('file', required=False)
 def save(file: str):
@@ -20,13 +21,13 @@ def save(file: str):
 
   query = Anime.select().order_by(Anime.created_at)
 
-  print('{} Querying...'.format(Icon.INTERROGATIVE.value))
+  print(f'{Icon.INTERROGATIVE.value} Querying...')
   print('{} Saving in {}'.format(Icon.PLUS.value, file or 'animes.csv'))
 
   for anime in query:
     f.write('{}, {}, {}\n'.format(anime.title, anime.url, anime.created_at))
 
-  print('[green]Done![/green]')
+  print('[green]Done!')
 
   f.close()
   db.close()

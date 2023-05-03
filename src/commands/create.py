@@ -6,24 +6,25 @@ from utils.validators import is_url
 from components.icons import Icon
 from infra.db import Anime, db
 
+
 @click.command()
 @click.argument('title')
 @click.argument('url')
 def create(title: str, url: str):
   """Create an anime with a given title/description"""
   if not is_url(url):
-    print('{} [bold red]The URL is not valid'.format(Icon.MINUS.value))
+    print(f'{Icon.MINUS.value} [bold red]The URL is not valid')
     exit(0)
 
   print(f'{Icon.INTERROGATIVE.value} Checking if the anime already exists...')
   animeAlreadyExists = Anime.get_or_none(Anime.title == title)
 
   if animeAlreadyExists:
-    print('{} [bold red]{} already exists.'.format(Icon.MINUS.value, title))
+    print(f'{Icon.MINUS.value} [bold red]{title} already exists.')
     exit(0)
 
-  print('{} Title: [orange_red1]{}'.format(Icon.PLUS.value, title))
-  print('{} URL: [orange_red1]{}'.format(Icon.PLUS.value, url))
+  print(f'{Icon.PLUS.value} Title: [orange_red1]{title}')
+  print(f'{Icon.PLUS.value} URL: [orange_red1]{url}')
 
   Anime.create(title=title, url=url, created_at=datetime.datetime.now())
 

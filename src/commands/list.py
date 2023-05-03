@@ -6,6 +6,7 @@ from rich.table import Table
 from components.icons import Icon
 from infra.db import Anime, db
 
+
 @click.command()
 @click.option('--all', '-a', is_flag=True, help='List all available animes')
 def list(all: bool):
@@ -38,7 +39,7 @@ def list(all: bool):
     table.add_row(anime.title, created_at)
 
   if table.row_count == 0:
-    print('{} [bold red]No anime saved today. Try again with -a!'.format(Icon.MINUS.value))
+    print(f'{Icon.MINUS.value} [bold red]No anime saved today. Try again with -a!')
     exit(0)
 
   print('[bold green]Done!')
