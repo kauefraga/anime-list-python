@@ -1,3 +1,9 @@
+# ✉ Anime List Python is now archived.
+
+I **reimplemented it with *Golang***, check here: [anime-archive](https://github.com/kauefraga/anime-archive)
+
+---
+
 <div align="center">
   <h1><code>Anime List</code></h1>
 
